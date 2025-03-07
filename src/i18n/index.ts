@@ -3,7 +3,6 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enUS from "./en-US/index";
-
 import jaJP from "./ja-JP/index";
 
 i18n

@@ -197,7 +197,6 @@ const Dashboard = () => {
         shadowOn={setIsShadowOn}
       />
       <div className="styles_layout mt_0!">
-        {isShadowOn && <div className="overlay" />}{" "}
         {/* 🛠 조건부로 Shadow 표시 */}
         {/* Design Your Financial Future with ALGOLAB */}
         <div className="bg_rgba(50,_96,_231,_1) w_100%" ref={sectionRefs.home}>
@@ -462,9 +461,7 @@ const Dashboard = () => {
                   //   lineHeight: "27px",
                 >
                   As we&nbsp;
-                  <span className="fw_bold">
-                    expand into the Asian market,
-                  </span>
+                  <span className="fw_bold">expand into the Asian market,</span>
                   {isDisplaySm && <br />}
                   {!isDisplaySm && "\u00A0"}we empower our clients to&nbsp;
                   <span className="fw_bold">
