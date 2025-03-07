@@ -3,7 +3,7 @@ import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
 
 import enUS from "./en-US/index";
-import koKR from "./ko-KR/index";
+
 import jaJP from "./ja-JP/index";
 
 i18n
@@ -12,7 +12,6 @@ i18n
   .init({
     resources: {
       "en-US": { translation: enUS },
-      "ko-KR": { translation: koKR },
       "ja-JP": { translation: jaJP },
     },
     lng: "ja-JP", // 기본 언어 (브라우저 감지를 사용할 경우 자동 설정됨)
