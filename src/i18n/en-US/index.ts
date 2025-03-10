@@ -96,7 +96,7 @@ const enUS: International = {
       why: "Why",
       ChooseUs: "Choose Us?",
       whyChooseUsDesc:
-        "Algolab is a trusted partner that helps clients achieve their financial goals through innovative financialtechnologies and hyper-personalized services. As a leader in the Asian market, we are shaping the future of finance together.",
+        "Algolab is a trusted partner that helps clients achieve their financial goals through innovative financial technologies and hyper-personalized services. As a leader in the Asian market, we are shaping the future of finance together.",
       innofinancial: "Innovative Financial Technologies",
       innofinancialDesc:
         "We deliver precise asset management using Embedded Finance and advanced technologies.",
