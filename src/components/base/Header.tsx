@@ -5,9 +5,7 @@ import Alram from "assets/image/alram_header.svg";
 import Profile from "assets/image/profile_header.svg";
 import Translation from "assets/image/translation.svg";
 import MoblieMenuBtn from "assets/image/mobile_menu_btn.svg";
-import TransJapan from "assets/image/trans_japan.png";
-import TransKorea from "assets/image/trans_south_korea.png";
-import TransUSA from "assets/image/trans_usa.png";
+import MobileMenuClseBtn from "assets/image/close_white_trans.svg";
 import { useTranslation } from "react-i18next";
 import i18n from "../../i18n"; // i18n 설정 불러오기
 
@@ -38,7 +36,7 @@ const Header: React.FC<HeaderProps> = ({
 }) => {
   const { t } = useTranslation();
   const dropdownRef = useRef<HTMLDivElement>(null); // 🔥 드롭다운을 감싸는 Ref 추가
-  // Translate menu names
+  const mobileMenuRef = useRef<HTMLDivElement>(null); // 🔥 메뉴 내부 감지 Ref
   const translatedMenus = predefinedMenus.map((menu) => ({
     ...menu,
     name: t(`layouts.top.menus.landing.${menu.key}`),
@@ -51,9 +49,14 @@ const Header: React.FC<HeaderProps> = ({
     setIsDropdownOpen(!isDropdownOpen);
   };
   const toggleMobileMenu = () => {
-    const newState = !isOpen; // 🛠 상태를 미리 저장
+    const newState = !isOpen;
     setIsOpen(newState);
-    shadowOn(newState); // 🛠 shadowOn에 newState 전달
+    shadowOn(newState);
+    if (newState) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
   };
 
   const changeLanguage = (lng: string) => {
@@ -61,7 +64,6 @@ const Header: React.FC<HeaderProps> = ({
     setIsDropdownOpen(false);
   };
 
-  // 🔥 드롭다운 외부 클릭 감지 이벤트 추가
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -80,6 +82,28 @@ const Header: React.FC<HeaderProps> = ({
       document.removeEventListener("mousedown", handleClickOutside);
     };
   }, [isDropdownOpen]);
+
+  useEffect(() => {
+    const handleMobileClickOutside = (event: MouseEvent) => {
+      if (
+        isOpen &&
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target as Node)
+      ) {
+        setIsOpen(false);
+        shadowOn(false);
+        document.body.style.overflow = "";
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleMobileClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleMobileClickOutside);
+    };
+  }, [isOpen]);
   return (
     <div className="styles_layout_header">
       <header className="styles_header">
@@ -147,9 +171,9 @@ const Header: React.FC<HeaderProps> = ({
           </div>
         </div>
       </header>
-
       {/* Mobile Menu Overlay */}
       <div
+            ref={mobileMenuRef} 
         className={`styles_layout_header_other ${
           isOpen ? "styles_isVisible" : ""
         }`}
@@ -158,10 +182,15 @@ const Header: React.FC<HeaderProps> = ({
           transition: "transform 0.3s ease-in-out", // 부드러운 애니메이션 효과 추가
         }}
       >
-        <div onClick={toggleMobileMenu}>닫기</div>
+        <div className="styles_module_5 h_auto!">
+          <MobileMenuClseBtn
+            className="transform_rotate(45deg) cursor_pointer"
+            onClick={toggleMobileMenu}
+          />
+        </div>
         <div className="styles_module_5">
           <div className="flex_column items_flex-start">
-            <div className="styles_navigationItems flex_column">
+            <div className="styles_navigationItems flex_column mb_40!">
               {/* Render Mobile Menus */}
               {translatedMenus.map((menu) => (
                 <div key={menu.id} className="styles_navigationTree">
@@ -169,34 +198,46 @@ const Header: React.FC<HeaderProps> = ({
                     className="styles_navigationTreeLabel"
                     onClick={() => scrollToSection(menu.path)}
                   >
-                    <a>{menu.name}</a>
+                    <a className="fw_bold text_white">{menu.name}</a>
                   </h2>
                 </div>
               ))}
             </div>
-            <div className="styles_waitlist d_flex!">
+            <div className="styles_waitlist d_flex! mb_40">
               <Message className="my_0 mx_12" />
               <Alram className="my_0 mx_12" />
               <Profile className="my_0 mx_12" />
             </div>
             <ul className="styles_trans_menu">
               <li
-                className="d_flex items_center"
+                className={`${
+                  i18n.language === "ja-JP" ? "bg_rgba(22,_35,_254,_1)" : ""
+                } d_flex items_center`}
                 onClick={() => changeLanguage("ja-JP")}
               >
-                <span>日本語</span>
+                <span
+                  className={`${i18n.language === "ja-JP" ? "fw_bold" : ""}`}
+                >
+                  日本語
+                </span>
               </li>
               <li
-                className="d_flex items_center"
+                className={`${
+                  i18n.language === "en-US" ? "bg_rgba(22,_35,_254,_1)" : ""
+                } d_flex items_center`}
                 onClick={() => changeLanguage("en-US")}
               >
-                <span>English</span>
+                <span
+                  className={`${i18n.language === "en-US" ? "fw_bold" : ""}`}
+                >
+                  English
+                </span>
               </li>
             </ul>
           </div>
         </div>
       </div>
-      {isOpen && <div className="overlay" />}{" "}
+      {isOpen && <div className="overlay" />}
     </div>
   );
 };

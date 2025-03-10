@@ -576,7 +576,10 @@
     background-color: rgba(17, 17, 17, 0.5);
   }
   .bg_rgba\(50\,_96\,_231\,_1\) {
-    background-color: rgba(50, 96, 231, 1);
+    background-color: #3260e7;
+  }
+  .bg_rgba\(22\,_35\,_254\,_1\) {
+    background-color: rgba(22, 35, 254, 1);
   }
   .bg_rgba\(146\,_177\,_227\,_0\.3\) {
     background-color: rgba(146, 177, 227, 0.3);
@@ -1464,6 +1467,10 @@
     display: initial;
   }
 
+  .transform_rotate\(45deg\) {
+    transform: rotate(45deg);
+  }
+
   .transform_rotate\(90deg\) {
     transform: rotate(90deg);
   }
@@ -1794,6 +1801,9 @@
   }
   .mb_40 {
     margin-bottom: 40px;
+  }
+  .mb_40\! {
+    margin-bottom: 40px !important;
   }
   .font_\'proxima-nova\'\,_\'kinto-sans\' {
     font-family: proxima-nova, kinto-sans;
@@ -2543,7 +2553,7 @@
 html {
   line-height: 1;
   box-sizing: border-box;
-  overflow-x: hidden;
+  // overflow-x: hidden;
 }
 ol,
 ul {

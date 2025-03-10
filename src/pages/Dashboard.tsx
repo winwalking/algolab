@@ -417,7 +417,7 @@ const Dashboard = () => {
                   <li className="list-type_outside md:fs_16 md:leading_24px sm:list-type_outside::marker">
                     <b>{t("pages.dashboard.ourServicesFirstBold1")}</b>&nbsp;
                     {t("pages.dashboard.ourServicesFirst1")}
-                    {i18n.language === "ja-JP" && "\u00A0"}
+                    &nbsp;
                     <b>{t("pages.dashboard.ourServicesFirstBold2")}</b>
                     {i18n.language !== "ko-KR" && isDisplaySm && <br />}&nbsp;
                     <span>
