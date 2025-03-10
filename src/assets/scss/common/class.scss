@@ -2063,7 +2063,9 @@
 }
 @media screen and (max-width: 540px) {
   .team-grid-container {
-    grid-template-columns: repeat(2, 187px);
+    // grid-template-columns: repeat(2, 187px);
+    grid-template-columns: repeat(2, auto);
+    margin: 0px;
   }
   .team-info-box {
     width: 152px !important;
