@@ -1,5 +1,26 @@
 export interface International {
-  common: {};
+  common: {
+    alert: {
+      sucess: {
+        title: string;
+        msg: {
+          successSent: string;
+        };
+      };
+      error: {
+        title: string;
+        msg: { errorSent: string };
+      };
+      warning: {
+        title: string;
+        msg: {};
+      };
+      info: {
+        title: string;
+        msg: {};
+      };
+    };
+  };
   layouts: {
     top: {
       menus: {

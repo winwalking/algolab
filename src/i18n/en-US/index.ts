@@ -1,7 +1,30 @@
 import International from "i18n/@types/index";
 
 const enUS: International = {
-  common: {},
+  common: {
+    alert: {
+      sucess: {
+        title: "Success",
+        msg: {
+          successSent:"Message sent successfully!"
+        },
+      },
+      error: {
+        title: "Error",
+        msg: {
+          errorSent:"Failed to send message. Please try again later."
+        },
+      },
+      warning: {
+        title: "Warning",
+        msg: {},
+      },
+      info: {
+        title: "Info",
+        msg: {},
+      },
+    },
+  },
   layouts: {
     top: {
       menus: {
@@ -71,7 +94,7 @@ const enUS: International = {
       aboutUsDescNinth: "and achieve their",
       aboutUsDescNinthBold: "financial goals.",
       aboutUsDescOnlyJP: "",
-      aboutUsDescOnlyKR:"",
+      aboutUsDescOnlyKR: "",
       ourServices: "Our services include",
       ourServicesDesc: "",
       ourServicesFirstBold1: "Robo-advisory solutions",
@@ -96,7 +119,7 @@ const enUS: International = {
       why: "Why",
       ChooseUs: "Choose Us?",
       whyChooseUsDesc:
-        "Algolab is a trusted partner that helps clients achieve their financial goals through innovative financial technologies and hyper-personalized services. As a leader in the Asian market, we are shaping the future of finance together.",
+        "Algolab is a trusted partner that helps clients achieve their financial goals through innovative financialtechnologies and hyper-personalized services. As a leader in the Asian market, we are shaping the future of finance together.",
       innofinancial: "Innovative Financial Technologies",
       innofinancialDesc:
         "We deliver precise asset management using Embedded Finance and advanced technologies.",

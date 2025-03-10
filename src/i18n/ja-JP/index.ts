@@ -1,7 +1,34 @@
 import International from "i18n/@types/index";
 
 const jaJP: International = {
-  common: {},
+  common: {
+    alert: {
+      sucess: {
+        title: "成功",
+        msg: {
+          successSent:"メッセージが正常に送信されました。"
+        },
+      },
+      error: {
+        title: "エラー",
+        msg: {
+          errorSent:"メッセージの送信に失敗しました。後でもう一度お試しください。"
+        },
+      },
+      warning: {
+        title: "警告",
+        msg: {
+          
+        },
+      },
+      info: {
+        title: "情報",
+        msg: {
+          
+        },
+      },
+    },
+  },
   layouts: {
     top: {
       menus: {
@@ -234,7 +261,7 @@ const jaJP: International = {
       contactUsMsgPlaceholder:
         "「どのようにお手伝いできますか？」\nメッセージを入力してください。追ってご連絡いたします。",
       contactUsSubmit: "送信",
-      contactUsSending: "",
+      contactUsSending: "送信中",
     },
   },
 };

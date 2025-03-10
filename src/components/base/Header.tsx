@@ -173,7 +173,7 @@ const Header: React.FC<HeaderProps> = ({
       </header>
       {/* Mobile Menu Overlay */}
       <div
-            ref={mobileMenuRef} 
+        ref={mobileMenuRef}
         className={`styles_layout_header_other ${
           isOpen ? "styles_isVisible" : ""
         }`}
