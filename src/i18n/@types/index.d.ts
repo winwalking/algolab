@@ -9,7 +9,8 @@ export interface International {
       };
       error: {
         title: string;
-        msg: { errorSent: string };
+        msg: { errorSent: string; invalidEmail: string };
+
       };
       warning: {
         title: string;
@@ -224,6 +225,8 @@ export interface International {
       contactUsCompanyName: string;
       contactUsMessage: string;
       contactUsMsgPlaceholder: string;
+      contactUsInputRequired: string;
+      contactUsInputEmailAddress: string;
       contactUsSubmit: string;
       contactUsSending: string;
     };

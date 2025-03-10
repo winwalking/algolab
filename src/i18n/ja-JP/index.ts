@@ -6,26 +6,24 @@ const jaJP: International = {
       sucess: {
         title: "成功",
         msg: {
-          successSent:"メッセージが正常に送信されました。"
+          successSent: "メッセージが正常に送信されました。",
         },
       },
       error: {
         title: "エラー",
         msg: {
-          errorSent:"メッセージの送信に失敗しました。後でもう一度お試しください。"
+          errorSent:
+            "メッセージの送信に失敗しました。後でもう一度お試しください。",
+          invalidEmail: "有効なメールアドレスを入力してください。",
         },
       },
       warning: {
         title: "警告",
-        msg: {
-          
-        },
+        msg: {},
       },
       info: {
         title: "情報",
-        msg: {
-          
-        },
+        msg: {},
       },
     },
   },
@@ -258,6 +256,8 @@ const jaJP: International = {
       contactUsWorkEmail: "勤務用メールアドレス",
       contactUsCompanyName: "会社名",
       contactUsMessage: "メッセージ",
+      contactUsInputRequired: "この項目は必須です。",
+      contactUsInputEmailAddress: "有効なメールアドレスを入力してください。",
       contactUsMsgPlaceholder:
         "「どのようにお手伝いできますか？」\nメッセージを入力してください。追ってご連絡いたします。",
       contactUsSubmit: "送信",

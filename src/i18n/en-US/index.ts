@@ -6,13 +6,14 @@ const enUS: International = {
       sucess: {
         title: "Success",
         msg: {
-          successSent:"Message sent successfully!"
+          successSent: "Message sent successfully!",
         },
       },
       error: {
         title: "Error",
         msg: {
-          errorSent:"Failed to send message. Please try again later."
+          errorSent: "Failed to send message. Please try again later.",
+          invalidEmail: "Please enter a valid email address.",
         },
       },
       warning: {
@@ -253,6 +254,8 @@ const enUS: International = {
       contactUsWorkEmail: "Work Email",
       contactUsCompanyName: "Company Name",
       contactUsMessage: "Message",
+      contactUsInputRequired: "This field is required.",
+      contactUsInputEmailAddress: "Please enter a valid email address.",
       contactUsMsgPlaceholder:
         "Tell us how can we help!\n Leave your message, and we’ll get back to you shortly.",
       contactUsSubmit: "Submit",
